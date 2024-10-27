@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp-eta-deploy
+  name: bankapp
   labels:
-    app: bankapp-eta-app
+    app: bankapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: bankapp-eta-app
+      app: bankapp
   template:
     metadata:
       labels:
-        app: bankapp-eta-app
+        app: bankapp
     spec:
       containers:
-      - name: bankapp-eta-container
+      - name: bankapp-container
         image: iamfaizanali/faizan_bankapp
         ports:
         - containerPort: 8082
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bankapp-eta-np-service
+  name: bankapp-service
   labels:
-    app: bankapp-eta-app
+    app: bankapp
 spec:
   selector:
-    app: bankapp-eta-app
+    app: bankapp
 
   type: NodePort
   ports:
