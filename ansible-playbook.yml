@@ -13,4 +13,4 @@
     command : sudo systemctl start docker
 
   - name: Deploy Docker Container
-    command: docker run -itd -p 8084:8081 iamfaizanali/bank-ansible:latest
+    command: docker run -itd -p 8084:8081 iamfaizanali/syed_bankapp:latest
